@@ -54,7 +54,17 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_address_space"></a> [address\_space](#output\_address\_space) | [Output] The list of address spaces used by the virtual network. |
+| <a name="output_dns_servers"></a> [dns\_servers](#output\_dns\_servers) | [Output] The list of DNS servers used by the virtual network. |
+| <a name="output_guid"></a> [guid](#output\_guid) | [Output] The GUID of the virtual network. |
+| <a name="output_id"></a> [id](#output\_id) | [Output] The ID of the virtual network. |
+| <a name="output_location"></a> [location](#output\_location) | [Output] Location of the virtual network. |
+| <a name="output_subnets"></a> [subnets](#output\_subnets) | [Output] The list of name of the subnets that are attached to this virtual network. |
+| <a name="output_tags"></a> [tags](#output\_tags) | [Optional] A mapping of tags to assigned to the resource. |
+| <a name="output_vnet_peerings"></a> [vnet\_peerings](#output\_vnet\_peerings) | [Output] A mapping of name - virtual network id of the virtual network peerings. |
+| <a name="output_vnet_peerings_addresses"></a> [vnet\_peerings\_addresses](#output\_vnet\_peerings\_addresses) | [Output] A list of virtual network peerings IP addresses. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 # azurerm.virtual_network
 
@@ -112,5 +122,15 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_address_space"></a> [address\_space](#output\_address\_space) | [Output] The list of address spaces used by the virtual network. |
+| <a name="output_dns_servers"></a> [dns\_servers](#output\_dns\_servers) | [Output] The list of DNS servers used by the virtual network. |
+| <a name="output_guid"></a> [guid](#output\_guid) | [Output] The GUID of the virtual network. |
+| <a name="output_id"></a> [id](#output\_id) | [Output] The ID of the virtual network. |
+| <a name="output_location"></a> [location](#output\_location) | [Output] Location of the virtual network. |
+| <a name="output_subnets"></a> [subnets](#output\_subnets) | [Output] The list of name of the subnets that are attached to this virtual network. |
+| <a name="output_tags"></a> [tags](#output\_tags) | [Optional] A mapping of tags to assigned to the resource. |
+| <a name="output_vnet_peerings"></a> [vnet\_peerings](#output\_vnet\_peerings) | [Output] A mapping of name - virtual network id of the virtual network peerings. |
+| <a name="output_vnet_peerings_addresses"></a> [vnet\_peerings\_addresses](#output\_vnet\_peerings\_addresses) | [Output] A list of virtual network peerings IP addresses. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
