@@ -10,7 +10,6 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.61.0 |
-| <a name="provider_time"></a> [time](#provider\_time) | 0.9.1 |
 
 ## Modules
 
@@ -24,7 +23,6 @@ No requirements.
 | Name | Type |
 |------|------|
 | [azurerm_virtual_network.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
-| [time_static.deploy_date](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/static) | resource |
 
 ## Inputs
 
@@ -38,7 +36,6 @@ No requirements.
 | <a name="input_descriptor_formats"></a> [descriptor\_formats](#input\_descriptor\_formats) | Describe additional descriptors to be output in the `descriptors` output map.<br>Map of maps. Keys are names of descriptors. Values are maps of the form<br>`{<br>   format = string<br>   labels = list(string)<br>}`<br>(Type is `any` so the map values can later be enhanced to provide additional options.)<br>`format` is a Terraform format string to be passed to the `format()` function.<br>`labels` is a list of labels, in order, to pass to `format()` function.<br>Label values will be normalized before being passed to `format()` so they will be<br>identical to how they appear in `id`.<br>Default is `{}` (`descriptors` output will be empty). | `any` | `{}` | no |
 | <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | [Optional] A list of DNS servers to associate with the virtual network. Changing this forces a new resource to be created. | `list(string)` | `[]` | no |
 | <a name="input_enable_default_subnet"></a> [enable\_default\_subnet](#input\_enable\_default\_subnet) | [Optional] If set to false, the default subnet will not be created. Changing this forces a new resource to be created. | `bool` | `true` | no |
-| <a name="input_enable_resource_group_per_resource"></a> [enable\_resource\_group\_per\_resource](#input\_enable\_resource\_group\_per\_resource) | [Optional] Set to `true` by default. Creates a resource group for each resource. If set to `false`, all resources will be created in the same resource group. | `bool` | `true` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | <a name="input_id_length_limit"></a> [id\_length\_limit](#input\_id\_length\_limit) | Limit `id` to this many characters (minimum 6).<br>Set to `0` for unlimited length.<br>Set to `null` for keep the existing setting, which defaults to `0`.<br>Does not affect `id_full`. | `number` | `null` | no |
@@ -50,7 +47,6 @@ No requirements.
 | <a name="input_name"></a> [name](#input\_name) | ID element. Usually the component or solution name, e.g. 'app' or 'jenkins'.<br>This is the only ID element not also included as a `tag`.<br>The "name" tag is set to the full `id` string. There is no tag with the value of the `name` input. | `string` | `null` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique | `string` | `null` | no |
 | <a name="input_regex_replace_chars"></a> [regex\_replace\_chars](#input\_regex\_replace\_chars) | Terraform regular expression (regex) string.<br>Characters matching the regex will be removed from the ID elements.<br>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | `null` | no |
-| <a name="input_resource_group_module"></a> [resource\_group\_module](#input\_resource\_group\_module) | [Optional] Resource group module object definition. | <pre>object({<br>    enabled         = optional(bool)<br>    name            = optional(string)<br>    namespace       = optional(string)<br>    environment     = optional(string)<br>    attributes      = optional(list(string))<br>    stage           = optional(string)<br>    location        = optional(string)<br>    label_order     = optional(list(string))<br>    id_length_limit = optional(number)<br>    tags            = optional(map(string))<br>    context         = optional(map(string))<br>  })</pre> | <pre>{<br>  "attributes": [<br>    "azurerm_resource_group"<br>  ],<br>  "enabled": true,<br>  "environment": null,<br>  "id_length_limit": 0,<br>  "label_order": [<br>    "name",<br>    "namespace",<br>    "environment",<br>    "stage",<br>    "location"<br>  ],<br>  "location": null,<br>  "name": null,<br>  "namespace": "rg",<br>  "stage": null,<br>  "tags": {}<br>}</pre> | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | [Optional] The name of an existing resource group in which to provision the virtual network. If ommitted, a new resource group will be created. | `string` | `null` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |
@@ -72,7 +68,6 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.61.0 |
-| <a name="provider_time"></a> [time](#provider\_time) | 0.9.1 |
 
 ## Modules
 
@@ -86,7 +81,6 @@ No requirements.
 | Name | Type |
 |------|------|
 | [azurerm_virtual_network.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
-| [time_static.deploy_date](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/static) | resource |
 
 ## Inputs
 
@@ -100,7 +94,6 @@ No requirements.
 | <a name="input_descriptor_formats"></a> [descriptor\_formats](#input\_descriptor\_formats) | Describe additional descriptors to be output in the `descriptors` output map.<br>Map of maps. Keys are names of descriptors. Values are maps of the form<br>`{<br>   format = string<br>   labels = list(string)<br>}`<br>(Type is `any` so the map values can later be enhanced to provide additional options.)<br>`format` is a Terraform format string to be passed to the `format()` function.<br>`labels` is a list of labels, in order, to pass to `format()` function.<br>Label values will be normalized before being passed to `format()` so they will be<br>identical to how they appear in `id`.<br>Default is `{}` (`descriptors` output will be empty). | `any` | `{}` | no |
 | <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | [Optional] A list of DNS servers to associate with the virtual network. Changing this forces a new resource to be created. | `list(string)` | `[]` | no |
 | <a name="input_enable_default_subnet"></a> [enable\_default\_subnet](#input\_enable\_default\_subnet) | [Optional] If set to false, the default subnet will not be created. Changing this forces a new resource to be created. | `bool` | `true` | no |
-| <a name="input_enable_resource_group_per_resource"></a> [enable\_resource\_group\_per\_resource](#input\_enable\_resource\_group\_per\_resource) | [Optional] Set to `true` by default. Creates a resource group for each resource. If set to `false`, all resources will be created in the same resource group. | `bool` | `true` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | <a name="input_id_length_limit"></a> [id\_length\_limit](#input\_id\_length\_limit) | Limit `id` to this many characters (minimum 6).<br>Set to `0` for unlimited length.<br>Set to `null` for keep the existing setting, which defaults to `0`.<br>Does not affect `id_full`. | `number` | `null` | no |
@@ -112,7 +105,6 @@ No requirements.
 | <a name="input_name"></a> [name](#input\_name) | ID element. Usually the component or solution name, e.g. 'app' or 'jenkins'.<br>This is the only ID element not also included as a `tag`.<br>The "name" tag is set to the full `id` string. There is no tag with the value of the `name` input. | `string` | `null` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique | `string` | `null` | no |
 | <a name="input_regex_replace_chars"></a> [regex\_replace\_chars](#input\_regex\_replace\_chars) | Terraform regular expression (regex) string.<br>Characters matching the regex will be removed from the ID elements.<br>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | `null` | no |
-| <a name="input_resource_group_module"></a> [resource\_group\_module](#input\_resource\_group\_module) | [Optional] Resource group module object definition. | <pre>object({<br>    enabled         = optional(bool)<br>    name            = optional(string)<br>    namespace       = optional(string)<br>    environment     = optional(string)<br>    attributes      = optional(list(string))<br>    stage           = optional(string)<br>    location        = optional(string)<br>    label_order     = optional(list(string))<br>    id_length_limit = optional(number)<br>    tags            = optional(map(string))<br>    context         = optional(map(string))<br>  })</pre> | <pre>{<br>  "attributes": [<br>    "azurerm_resource_group"<br>  ],<br>  "enabled": true,<br>  "environment": null,<br>  "id_length_limit": 0,<br>  "label_order": [<br>    "name",<br>    "namespace",<br>    "environment",<br>    "stage",<br>    "location"<br>  ],<br>  "location": null,<br>  "name": null,<br>  "namespace": "rg",<br>  "stage": null,<br>  "tags": {}<br>}</pre> | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | [Optional] The name of an existing resource group in which to provision the virtual network. If ommitted, a new resource group will be created. | `string` | `null` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |

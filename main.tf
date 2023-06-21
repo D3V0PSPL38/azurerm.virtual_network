@@ -1,6 +1,4 @@
 ### [BEGIN] main.tf ###
-resource "time_static" "deploy_date" {}
-
 module "label" {
   source          = "github.com/D3V0PSPL38/terraform-context-label.git"
   enabled         = module.this.enabled
