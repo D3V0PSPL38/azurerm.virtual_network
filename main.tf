@@ -11,24 +11,9 @@ module "label" {
   location        = var.location
   label_order     = var.label_order
   id_length_limit = var.id_length_limit
-  tags            = local.default_tags
+  tags            = var.tags
   context         = module.this.context
 }
-
-module "resource_group" {
-  source = "github.com/D3V0PSPL38/terraform-azurerm-resource-group.git"
-  enabled = module.this.enabled
-  name = var.name
-  namespace = var.namespace
-  environment = var.environment
-  stage = var.stage
-  location = var.location
-  label_order = var.label_order
-  id_length_limit = var.id_length_limit
-  tags = local.default_tags
-  context = module.this.context
-}
-
 resource "azurerm_virtual_network" "this" {
   count               = local.e ? 1 : 0
   name                = format("%s-%02d", module.label.id, count.index + 1)
