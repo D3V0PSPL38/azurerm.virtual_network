@@ -23,7 +23,7 @@ resource "azurerm_virtual_network" "this" {
     for_each = local.e ? [1] : []
     iterator = default
     content {
-      name           = format("%s-%02d", module.label.id, subnet.key)
+      name           = format("%s-%02d", module.label.id, count.index + 1)
       address_prefix = var.address_prefix
       security_group = var.security_group
     }
