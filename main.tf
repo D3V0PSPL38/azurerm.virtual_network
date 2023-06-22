@@ -32,9 +32,8 @@ resource "azurerm_virtual_network" "this" {
 
 module "resource_group" {
   source          = "github.com/D3V0PSPL38/terraform-azurerm-resource-group.git"
-  count           = var.create_resource_group ? 1 : 0
-  enabled         = module.this.enabled
-  name            = join("-", [var.resource_group_label.name, var.name])
+  enabled         = var.create_resource_group
+  name            = var.name
   namespace       = var.namespace
   attributes      = var.attributes
   label_order     = var.label_order
