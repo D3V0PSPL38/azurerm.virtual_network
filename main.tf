@@ -20,14 +20,29 @@ resource "azurerm_virtual_network" "this" {
   address_space       = var.address_space
   dns_servers         = var.dns_servers
   dynamic "subnet" {
-    for_each = local.e ? [1] : []
-    iterator = default
+    for_each = local.e == true ? [1] : []
     content {
       name           = format("%s-%02d", module.label.id, count.index + 1)
-      address_prefix = var.address_prefix
-      security_group = var.security_group
+      address_prefix = [for i in var.address_prefixes : index(var.address_prefixes, i)]
+      security_group = [for s in var.security_groups : index(var.security_groups, s)]
     }
   }
   tags = module.label.tags
+}
+
+module "resource_group" {
+  source          = "github.com/D3V0PSPL38/terraform-azurerm-resource-group.git"
+  for_each        = var.create_resource_group ? [1] : []
+  enabled         = module.this.enabled
+  name            = var.name
+  namespace       = var.namespace
+  attributes      = var.attributes
+  label_order     = var.label_order
+  id_length_limit = var.id_length_limit
+  environment     = var.environment
+  stage           = var.stage
+  location        = var.location
+  tags            = var.tags
+  context         = module.this.context
 }
 ### [END] main.tf ###
