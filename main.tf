@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "this" {
   count               = local.e ? 1 : 0
   name                = format("%s-%02d", module.label.id, count.index + 1)
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = var.create_resource_group == true ? module.resource_group.this[0].name : var.resource_group_name
   address_space       = var.address_space
   dns_servers         = var.dns_servers
   dynamic "subnet" {

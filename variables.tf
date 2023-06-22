@@ -35,7 +35,7 @@ variable "enable_default_subnet" {
   [Optional] If set to false, the default subnet will not be created. Changing this forces a new resource to be created.
   EOD
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "address_prefixes" {
@@ -48,7 +48,7 @@ variable "address_prefixes" {
 
 variable "security_groups" {
   description = <<EOD
-  [Optional] A list of security group names to attach to the default subnet. 
+  [Optional] A list of security group names to attach to the default subnet.
   EOD
   type        = list(string)
   default     = []

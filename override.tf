@@ -1,7 +1,7 @@
 ### [BEGIN] override.tf ###
 module "resource_group" {
   source          = "github.com/D3V0PSPL38/terraform-azurerm-resource-group.git"
-  for_each        = var.create_resource_group ? [1] : []
+  count           = var.create_resource_group ? 1 : 0
   enabled         = module.this.enabled
   name            = join("-", [var.resource_group_label.name, var.name])
   namespace       = var.namespace
