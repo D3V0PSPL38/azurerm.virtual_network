@@ -1,4 +1,11 @@
 ### [BEGIN] output.tf ###
+output "name" {
+  description = <<EOD
+  [Output] The name of the virtual network.
+  EOD
+  value       = join("", azurerm_virtual_network.this.*.name)
+}
+
 output "id" {
   description = <<EOD
   [Output] The ID of the virtual network.

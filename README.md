@@ -66,6 +66,7 @@ No requirements.
 | <a name="output_guid"></a> [guid](#output\_guid) | [Output] The GUID of the virtual network. |
 | <a name="output_id"></a> [id](#output\_id) | [Output] The ID of the virtual network. |
 | <a name="output_location"></a> [location](#output\_location) | [Output] Location of the virtual network. |
+| <a name="output_name"></a> [name](#output\_name) | [Output] The name of the virtual network. |
 | <a name="output_subnets"></a> [subnets](#output\_subnets) | [Output] The list of name of the subnets that are attached to this virtual network. |
 | <a name="output_tags"></a> [tags](#output\_tags) | [Optional] A mapping of tags to assigned to the resource. |
 | <a name="output_vnet_peerings"></a> [vnet\_peerings](#output\_vnet\_peerings) | [Output] A mapping of name - virtual network id of the virtual network peerings. |
@@ -139,6 +140,7 @@ No requirements.
 | <a name="output_guid"></a> [guid](#output\_guid) | [Output] The GUID of the virtual network. |
 | <a name="output_id"></a> [id](#output\_id) | [Output] The ID of the virtual network. |
 | <a name="output_location"></a> [location](#output\_location) | [Output] Location of the virtual network. |
+| <a name="output_name"></a> [name](#output\_name) | [Output] The name of the virtual network. |
 | <a name="output_subnets"></a> [subnets](#output\_subnets) | [Output] The list of name of the subnets that are attached to this virtual network. |
 | <a name="output_tags"></a> [tags](#output\_tags) | [Optional] A mapping of tags to assigned to the resource. |
 | <a name="output_vnet_peerings"></a> [vnet\_peerings](#output\_vnet\_peerings) | [Output] A mapping of name - virtual network id of the virtual network peerings. |
